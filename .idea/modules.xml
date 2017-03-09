@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CarsApi.iml" filepath="$PROJECT_DIR$/CarsApi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CarsApi-grailsPlugins.iml" filepath="$PROJECT_DIR$/CarsApi-grailsPlugins.iml" />
+    </modules>
+  </component>
+</project>
