@@ -44,12 +44,16 @@ class AutoController extends ErrorController {
 
     def update(){
         Map requestParameters = getParams()
-        log.info("Ingresando a editar auto con id=${requestParameters.id}")
+        Map requestBody = MapUtils.requestBodyToMap(request)
+        log.info("Se ingereso Auto con id=${requestParameters.id} para actualizar")
         carsService.getIdCar(requestParameters.id)
-        log.info("Ingresando a editar auto con id=${requestParameters.count()} ")
-        log.info("entrando a update")
-        if (requestParameters.us != null){
-            log.info(requestParameters.us)
-        }
+        log.info("Ingresando a editar con los siguientes parametros=${requestBody} ")
+        carsService.actualizarAuto(requestParameters.id,requestBody)
+        def result = carsService.getCar(requestParameters)
+        Map response = [
+                response: carsService.normalizedResponse(result),
+                status: 200
+        ]
+        render(response as JSON)
     }
 }
